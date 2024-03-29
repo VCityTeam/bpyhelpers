@@ -1,11 +1,8 @@
-# The reference version of this file is probably encountered at
-#  https://github.com/VCityTeam/TunNetGen/blob/master/WithModeller/bmesh_utils.py
-
 import bpy
 import bmesh
 
 
-def promote_bmesh_to_UI_object(src_bmesh: bmesh.types.BMesh, name):
+def UI_promote_bmesh_to_UI_object(src_bmesh: bmesh.types.BMesh, name):
     # Not sure why the following transfer to a new mesh is really needed.
     # Maybe it is due to the latter arising of the bmesh module and the need
     # to keep it compatible with the UI way of things (?), refer to
@@ -18,7 +15,7 @@ def promote_bmesh_to_UI_object(src_bmesh: bmesh.types.BMesh, name):
     return bpy.data.objects.new(name, mesh_result)
 
 
-def demote_UI_object_with_mesh_to_bmesh(src_object):
+def UI_demote_UI_object_with_mesh_to_bmesh(src_object):
     bmesh_result = bmesh.new()
     bmesh_result.from_mesh(src_object.data)
     return bmesh_result

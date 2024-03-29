@@ -1,12 +1,9 @@
-# The reference version of this file is probably encountered at
-#  https://github.com/VCityTeam/TunNetGen/blob/master/WithModeller/bmesh_utils.py
-
 import sys
 import logging
 import bpy
 
 # In order to import bmesh one must first import bpy (and somehow it is quite
-# off for bmesh to depend on the UI
+# off for bmesh to depend on the UI)
 import bmesh
 from collections import defaultdict
 
