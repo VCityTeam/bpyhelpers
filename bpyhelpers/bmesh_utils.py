@@ -201,10 +201,10 @@ def bmesh_euler_characteristic(src_bmesh):
     return v_num - e_num + f_num
 
 
-def bmesh_assert_genus_number_boundaries(src_bmesh, genus, num_boundaries, msg):
+def bmesh_assert_genus_number_boundaries(src_bmesh, genus, num_boundaries, error_msg):
     effective_num_boundaries = bmesh_get_number_of_boundaries(src_bmesh)
     if effective_num_boundaries != num_boundaries:
-        print(msg)
+        print(error_msg)
         print("Erroneous number of boundaries: ")
         print(
             "   Was expecting ", num_boundaries, " but got ", effective_num_boundaries
@@ -214,7 +214,7 @@ def bmesh_assert_genus_number_boundaries(src_bmesh, genus, num_boundaries, msg):
     effective_euler_characteristic = bmesh_euler_characteristic(src_bmesh)
     double_effective_genus = 2 - num_boundaries - effective_euler_characteristic
     if double_effective_genus != 2 * genus:
-        print(msg)
+        print(error_msg)
         print("Erroneous genus: ")
         print("   Was expecting ", genus, " but got ", double_effective_genus / 2)
         print("Exiting.")
@@ -234,3 +234,16 @@ def bmesh_assert_genus_number_boundaries(src_bmesh, genus, num_boundaries, msg):
         sys.exit(1)
     # All if fine and we have the expected topology
     return
+
+
+def bmesh_print_topological_characteristics(src_bmesh):
+    euler_characteristic = bmesh_euler_characteristic(src_bmesh)
+    num_boundaries = bmesh_get_number_of_boundaries(src_bmesh)
+    genus = (2 - num_boundaries - euler_characteristic) / 2
+    print("Mesh characteristics:")
+    print("   Genus: ", genus)
+    print("   Number of boundaries:", num_boundaries)
+    print("   Euler characteristic", euler_characteristic)
+    print("   Number of verticies: ", len(src_bmesh.verts))
+    print("   Number of edges: ", len(src_bmesh.edges))
+    print("   Number of faces: ", len(src_bmesh.faces))

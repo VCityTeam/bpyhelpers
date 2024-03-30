@@ -8,6 +8,7 @@ from .bmesh_utils import (
     bmesh_get_boundary_edges,
     bmesh_get_number_of_boundaries,
     bmesh_join,
+    bmesh_print_topological_characteristics,
     boundary_select,
     bmesh_triangulate_quad_faces,
 )
@@ -33,6 +34,7 @@ __all__ = [
     "bmesh_get_boundary_edges",
     "bmesh_get_number_of_boundaries",
     "bmesh_join",
+    "bmesh_print_topological_characteristics",
     "boundary_select",
     "bmesh_triangulate_quad_faces",
     "convert_ply_triangulation_to_point_cloud",
