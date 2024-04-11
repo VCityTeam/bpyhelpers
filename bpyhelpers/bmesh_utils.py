@@ -244,6 +244,6 @@ def bmesh_print_topological_characteristics(src_bmesh):
     print("   Genus: ", genus)
     print("   Number of boundaries:", num_boundaries)
     print("   Euler characteristic", euler_characteristic)
-    print("   Number of verticies: ", len(src_bmesh.verts))
+    print("   Number of vertices: ", len(src_bmesh.verts))
     print("   Number of edges: ", len(src_bmesh.edges))
     print("   Number of faces: ", len(src_bmesh.faces))
