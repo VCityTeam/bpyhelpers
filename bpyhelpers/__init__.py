@@ -22,6 +22,9 @@ from .UI_utils import (
 from .convert_ply_triangulation_to_point_cloud import (
     convert_ply_triangulation_to_point_cloud,
 )
+from .convert_obj_triangulation_to_point_cloud import (
+    convert_obj_triangulation_to_point_cloud,
+)
 
 __version__ = version
 __title__ = "bpyhelpers"
@@ -38,6 +41,7 @@ __all__ = [
     "boundary_select",
     "bmesh_triangulate_quad_faces",
     "convert_ply_triangulation_to_point_cloud",
+    "convert_obj_triangulation_to_point_cloud",
     "create_sphere",
     "UI_boolean_union",
     "UI_cleanup_default_scene",
